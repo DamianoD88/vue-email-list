@@ -8,13 +8,14 @@ const app = new Vue (
     {
         el: '#app',
         data: {
-            number: 0
+            number: ['']
         },
         mounted(){
             axios
             .get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then(result => {
-                console.log(result.data);
+                // console.log(result.data);
+                this.number = result.data.response;
             });
         }
     }
